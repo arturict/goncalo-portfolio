@@ -2,17 +2,61 @@
 
 ## Project Overview
 
-This is a **frontend-only** portfolio website for Artur Ferreira built with Next.js 15, Tailwind CSS, and shadcn/ui.
+This is a **frontend-only** portfolio website for Artur Ferreira built with Next.js 16, Tailwind CSS, and shadcn/ui.
 
 **Important**: This is a static portfolio website with NO backend, NO database, NO authentication.
 
+## 🌐 Deployment & Branching
+
+### Branch Strategy
+
+#### Main Branch (Production)
+- **URL**: https://arturf.ch
+- **Purpose**: Stable production releases only
+- **Protected**: Only merge from `dev` when tested and stable
+- **Auto-Deploy**: Coolify deploys on push
+
+#### Dev Branch (Development)
+- **URL**: https://portfolio-dev.artur.engineer
+- **Purpose**: Active development and testing
+- **Workflow**: ALL new features and changes go here first
+- **Auto-Deploy**: Coolify deploys on push for preview
+
+### Workflow Rules
+
+**ALWAYS work on the `dev` branch for new features!**
+
+1. **Development**: Make all changes on `dev` branch
+2. **Test**: Check preview at portfolio-dev.artur.engineer
+3. **Approve**: User reviews and approves
+4. **Release**: Merge `dev` to `main` for production deploy
+
+**Never push directly to `main` unless it's a critical hotfix!**
+
+### Commands
+
+```bash
+# Switch to dev for development
+git checkout dev
+
+# Make changes, commit, push
+git add .
+git commit -m "feat: your changes"
+git push origin dev
+
+# When ready for production (user approved)
+git checkout main
+git merge dev
+git push origin main
+```
+
 ## Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Styling**: Tailwind CSS v4
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
-- **Runtime**: Bun
+- **Runtime**: Bun (dev) / Node.js (production)
 - **Language**: TypeScript
 
 ## Documentation Sources
@@ -35,57 +79,79 @@ Use Playwright MCP for browser testing
 
 ```
 portfolio/
-├── app/
-│   ├── page.tsx          # Main portfolio page
-│   ├── layout.tsx        # Root layout
-│   ├── globals.css       # Global styles
-│   └── api/
-│       └── health/       # Health check endpoint only
-├── components/
-│   └── ui/              # shadcn/ui components only
-├── lib/
-│   └── utils.ts         # Utility functions
-└── public/              # Static assets
+ app/
+   ├── page.tsx          # Main portfolio page (Client Component)
+   ├── layout.tsx        # Root layout
+   ├── globals.css       # Global styles + animations
+   └── api/
+       └── health/       # Health check endpoint only
+ components/
+   └── ui/              # shadcn/ui components only
+ lib/
+   └── utils.ts         # Utility functions
+ public/              # Static assets
 ```
 
 ## What This Project IS
 
-✅ A static portfolio website
-✅ Server-side rendered (SSR) with Next.js
-✅ Showcasing profile, skills, experience, and projects
-✅ Beautiful UI with Tailwind CSS and shadcn/ui
-✅ Fully responsive design
-✅ Deployable to Coolify with Docker
+ A static portfolio website  
+ Server-side rendered (SSR) with Next.js  
+ Showcasing profile, skills, experience, and projects  
+ Beautiful UI with Dark Mode  
+ Mouse-reactive background  
+ Smooth scroll animations  
+ Fully responsive design  
+ Deployable to Coolify with Docker  
 
 ## What This Project IS NOT
 
-❌ NO backend API routes (except /api/health)
-❌ NO database (PostgreSQL, MongoDB, etc.)
-❌ NO authentication (NextAuth, Auth.js, etc.)
-❌ NO user management
-❌ NO CMS or admin panel
-❌ NO data fetching from external APIs
-❌ NO server actions beyond rendering
-❌ NO environment variables for secrets
-❌ NO rate limiting, analytics, or third-party services
+ NO backend API routes (except /api/health)  
+ NO database (PostgreSQL, MongoDB, etc.)  
+ NO authentication (NextAuth, Auth.js, etc.)  
+ NO user management  
+ NO CMS or admin panel  
+ NO data fetching from external APIs  
+ NO server actions beyond rendering  
+ NO environment variables for secrets  
+ NO rate limiting, analytics, or third-party services  
 
 ## Portfolio Content
 
 Show information about Artur Ferreira:
 
+### Basic Info
 - **Name**: Artur Ferreira
 - **Role**: Informatiker EFZ Applikationsentwickler (3. Lehrjahr)
 - **Company**: CKW AG / Axpo Group
+- **Technologies**: Microsoft Stack (.NET, ASP.NET, C#, MSSQL)
 - **School**: Berufsbildungszentrum Wirtschaft, Informatik und Technik Sursee
-- **Skills**:
-  - Frontend: Vue.js, JavaScript, HTML/CSS, Tailwind CSS
-  - Backend: PHP, Laravel, .NET, ASP.NET, C#, Python
-  - Database: MySQL, MSSQL, MongoDB
-  - Other: REST APIs, WebSocket, Real-time Applications
-- **Featured Project**: CodeCellar - Real-time code editor from 2024 Young Talents Hackathon (https://young-talents-hackathon.ch/)
-- **Links**:
-  - GitHub: https://github.com/arturict
-  - LinkedIn: https://www.linkedin.com/in/artur-ferreira7
+- **Graduation**: August 2027
+
+### Skills
+- **Frontend**: Vue.js, JavaScript, HTML/CSS, Tailwind CSS, React, Next.js
+- **Backend**: .NET, ASP.NET, C#, PHP, Laravel, Python, Node.js
+- **Database**: MSSQL, MySQL, MongoDB, PostgreSQL
+- **Other**: REST APIs, WebSocket, Real-time Applications, Docker, Git
+
+### Personal Projects
+- **Homelab**: Proxmox cluster with 4 nodes
+  - Total RAM: 264GB (128 + 96 + 32 + 8)
+  - Always-on: 40GB RAM 24/7
+  - Self-hosted PaaS: Coolify for deployments
+- **AI Enthusiast**: Interested in AI/ML technologies
+- **Blog**: Coming Soon - Simple blog platform (link will be added later)
+
+### Featured Project
+- **CodeCellar**: Real-time code editor from 2024 Young Talents Hackathon
+- **Tech**: Monaco Editor, WebSocket, Real-time Sync
+- **Link**: https://young-talents-hackathon.ch/
+- **Note**: NOT a hackathon winner, just participated
+
+### Links
+- **Email**: artur@ferreiracruz.com (PRIMARY)
+- **GitHub**: https://github.com/arturict
+- **LinkedIn**: https://www.linkedin.com/in/artur-ferreira7
+- **Website**: https://arturf.ch
 
 ## Code Style
 
@@ -96,16 +162,17 @@ Show information about Artur Ferreira:
 - Explicitly type function returns for components
 
 ### React/Next.js
-- Server Components by default
-- Use `"use client"` only when absolutely necessary
+- Use Client Components ("use client") when needed (mouse tracking, animations)
+- Server Components by default for static content
 - Functional components only
-- Use Next.js 15 App Router conventions
+- Use Next.js 16 App Router conventions
 
 ### Tailwind CSS
 - Use utility classes directly in JSX
 - Follow mobile-first responsive design
 - Use Tailwind v4 syntax (with `@theme` directive)
 - Leverage arbitrary values when needed: `w-[342px]`
+- Responsive classes: `text-base sm:text-lg md:text-xl`
 
 ### Components
 - One component per file
@@ -123,15 +190,17 @@ Show information about Artur Ferreira:
 ## Common Tasks
 
 ### Adding a new section
-1. Create component in `components/`
-2. Import in `app/page.tsx`
+1. Create component in `components/` (if reusable)
+2. Add to `app/page.tsx`
 3. Use shadcn/ui components for consistency
 4. Apply Tailwind CSS for styling
+5. Test on dev deployment
 
 ### Updating portfolio content
 - Edit `app/page.tsx` directly
 - Content is hardcoded (no database)
 - Update skills, projects, or experience inline
+- Push to `dev` branch first!
 
 ### Styling
 - Use Tailwind utility classes
@@ -148,10 +217,21 @@ bunx shadcn@latest add [component-name]
 
 **Target**: Coolify with Docker
 
-- Dockerfile in root
-- No environment variables needed
-- Port: 3000
+### Production (arturf.ch)
+- Branch: `main`
+- Dockerfile: `Dockerfile`
+- Port: `3000`
 - Health check: `/api/health`
+
+### Development (portfolio-dev.artur.engineer)
+- Branch: `dev`
+- Dockerfile: `Dockerfile`
+- Port: `3000`
+- Health check: `/api/health`
+
+### Backend API (Future)
+- URL: `https://portfolio-v2-dev.artur.engineer`
+- See: `BACKEND.md`
 
 ## Commands
 
@@ -171,23 +251,47 @@ bun run lint
 
 ## What to AVOID
 
-❌ Don't add backend routes
-❌ Don't install database libraries
-❌ Don't add authentication
-❌ Don't add environment variables for secrets
-❌ Don't add API integrations
-❌ Don't add server actions that mutate data
-❌ Don't overcomplicate - keep it simple!
+ Don't add backend routes  
+ Don't install database libraries  
+ Don't add authentication  
+ Don't add environment variables for secrets  
+ Don't add API integrations  
+ Don't add server actions that mutate data  
+ Don't push directly to main (use dev first!)  
+ Don't overcomplicate - keep it simple!  
 
 ## When Helping with Code
 
-1. **Check Context7 first** for Next.js, Tailwind, or shadcn/ui questions
-2. **Use Playwright MCP** for browser testing or automation
-3. **Keep it frontend-only** - no backend logic
-4. **Use Server Components** by default
-5. **Leverage shadcn/ui** for UI consistency
-6. **Mobile-first** responsive design
-7. **Type-safe** with TypeScript
+1. **Check branch** - Use `dev` for all development
+2. **Check Context7 first** for Next.js, Tailwind, or shadcn/ui questions
+3. **Use Playwright MCP** for browser testing or automation
+4. **Keep it frontend-only** - no backend logic
+5. **Use Client Components** when needed (mouse tracking, scroll observers)
+6. **Leverage shadcn/ui** for UI consistency
+7. **Mobile-first** responsive design
+8. **Type-safe** with TypeScript
+9. **Test on dev** before merging to main
+
+## Design Guidelines
+
+### Dark Mode
+- Pure black background (`bg-black`)
+- Cyan/Blue/Purple gradient accents
+- Glassmorphism cards
+- Glowing shadows on hover
+
+### Animations
+- Mouse-reactive background gradient
+- Scroll-triggered fade-ins
+- Smooth transitions (300ms)
+- Blob animations (7s loop)
+- Not cringe, professional!
+
+### Responsive
+- Mobile: 320px+ (single column)
+- Tablet: 768px+ (better spacing)
+- Desktop: 1024px+ (grid layouts)
+- Touch-friendly buttons
 
 ## Examples
 
@@ -202,17 +306,16 @@ const skills = {
 
 ### Creating a new section
 ```tsx
-// components/about-section.tsx
-export default function AboutSection() {
-  return (
-    <section className="py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold">About</h2>
-        {/* Content */}
-      </div>
-    </section>
-  )
-}
+// In app/page.tsx (or new component)
+<section className="scroll-fade-in space-y-12">
+  <div className="flex items-center gap-4">
+    <div className="p-3 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl">
+      <Icon className="w-8 h-8 text-cyan-400" />
+    </div>
+    <h2 className="text-4xl md:text-5xl font-bold">Section Title</h2>
+  </div>
+  {/* Content */}
+</section>
 ```
 
 ### Using Context7
@@ -224,6 +327,19 @@ export default function AboutSection() {
 
 ## Remember
 
-This is a simple, beautiful portfolio website. No backend. No database. Just a clean, professional showcase of Artur's work and skills.
+- **Always work on `dev` branch** for new features
+- **Test on portfolio-dev.artur.engineer** before merging
+- **User approval required** before merging to main
+- **This is frontend-only** - no backend, no database
+- **Content is hardcoded** - no CMS needed
+- **Mobile-first** design approach
+- **When in doubt, check Context7** for documentation!
 
-**When in doubt, check Context7 for documentation!**
+## Release Process
+
+1. Develop on `dev` branch
+2. Push to `dev` → Auto-deploys to portfolio-dev.artur.engineer
+3. User tests and approves
+4. Merge `dev` to `main`
+5. Push to `main` → Auto-deploys to arturf.ch
+6. Production is live! 🎉
