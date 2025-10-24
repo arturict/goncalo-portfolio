@@ -383,7 +383,7 @@ export default function Portfolio() {
                 <div className="pt-3 border-t border-gray-700">
                   <p className="text-sm text-gray-300 leading-relaxed">
                     Self-hosted <span className="text-orange-400 font-semibold">Coolify PaaS</span> for 
-                    seamless deployments. Running production services with enterprise reliability.
+                    seamless deployments. Running production services 24/7.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
