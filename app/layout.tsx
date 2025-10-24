@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ScrollAnimations } from "@/components/scroll-animations";
 
 export const metadata: Metadata = {
   title: "Artur Ferreira - Full-Stack Developer",
   description:
-    "Portfolio of Artur Ferreira, 3rd year apprentice at CKW AG / Axpo Group. Full-stack developer specializing in Vue.js, PHP, Laravel, .NET, and real-time applications.",
+    "Portfolio of Artur Ferreira, 3rd year apprentice at CKW AG / Axpo Group. Full-stack developer working with Microsoft technologies, specializing in .NET, C#, Vue.js, and real-time applications. Graduating August 2027.",
   keywords: [
     "Artur Ferreira",
     "Portfolio",
@@ -14,10 +13,12 @@ export const metadata: Metadata = {
     "Applikationsentwickler",
     "CKW AG",
     "Axpo Group",
-    "Vue.js",
-    "PHP",
-    "Laravel",
+    "Microsoft",
     ".NET",
+    "C#",
+    "ASP.NET",
+    "Vue.js",
+    "MSSQL",
     "WebSocket",
     "Real-time Applications"
   ],
@@ -28,13 +29,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://arturf.ch",
     title: "Artur Ferreira - Full-Stack Developer",
-    description: "Full-stack developer portfolio showcasing modern web applications and real-time solutions",
+    description: "Full-stack developer portfolio showcasing Microsoft technologies and modern web applications",
     siteName: "Artur Ferreira Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Artur Ferreira - Full-Stack Developer",
-    description: "Full-stack developer portfolio showcasing modern web applications",
+    description: "Full-stack developer working with Microsoft technologies",
   },
   metadataBase: new URL("https://arturf.ch"),
 };
@@ -48,7 +49,6 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="antialiased bg-black text-white">
         {children}
-        <ScrollAnimations />
       </body>
     </html>
   );
