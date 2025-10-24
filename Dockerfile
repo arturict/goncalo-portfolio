@@ -24,6 +24,10 @@ RUN \
 
 FROM base AS runner
 WORKDIR /app
+
+# Install curl for healthchecks
+RUN apk add --no-cache curl
+
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
