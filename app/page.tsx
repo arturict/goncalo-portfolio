@@ -14,7 +14,11 @@ import {
   ArrowRight,
   Sparkles,
   Zap,
-  Calendar
+  Calendar,
+  Server,
+  Brain,
+  BookOpen,
+  Rocket
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -321,6 +325,151 @@ export default function Portfolio() {
                       {skill}
                     </Badge>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Personal Projects Section */}
+        <section className="space-y-8 sm:space-y-12 scroll-fade-in">
+          <div className="flex items-center gap-4 mb-8 sm:mb-12">
+            <div className="p-2 sm:p-3 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl border border-orange-500/30">
+              <Server className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400" />
+            </div>
+            <div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Personal Projects</h2>
+              <p className="text-gray-500 mt-1 text-sm sm:text-base">Self-hosted & Learning</p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            {/* Homelab Card */}
+            <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-orange-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-orange-500/20">
+              <CardHeader>
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="p-2 bg-orange-500/10 rounded-lg">
+                    <Server className="w-6 h-6 text-orange-400" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-orange-400 transition-colors">
+                      Homelab & Self-Hosting
+                    </CardTitle>
+                  </div>
+                </div>
+                <CardDescription className="text-base text-gray-400">
+                  Proxmox cluster with enterprise-grade infrastructure
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Cluster Nodes</span>
+                    <span className="text-white font-semibold">4 Nodes</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Total RAM</span>
+                    <span className="text-orange-400 font-semibold">264GB</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Configuration</span>
+                    <span className="text-gray-300 font-mono text-xs">128+96+32+8 GB</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Always-On</span>
+                    <span className="text-green-400 font-semibold">40GB RAM 24/7</span>
+                  </div>
+                </div>
+                <div className="pt-3 border-t border-gray-700">
+                  <p className="text-sm text-gray-300 leading-relaxed">
+                    Self-hosted <span className="text-orange-400 font-semibold">Coolify PaaS</span> for 
+                    seamless deployments. Running production services with enterprise reliability.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
+                    Proxmox
+                  </Badge>
+                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
+                    Coolify
+                  </Badge>
+                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
+                    Self-Hosted
+                  </Badge>
+                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
+                    24/7 Uptime
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* AI Enthusiast Card */}
+            <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-purple-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/20">
+              <CardHeader>
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="p-2 bg-purple-500/10 rounded-lg">
+                    <Brain className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-purple-400 transition-colors">
+                      AI Enthusiast
+                    </CardTitle>
+                  </div>
+                </div>
+                <CardDescription className="text-base text-gray-400">
+                  Exploring artificial intelligence and machine learning
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Passionate about AI/ML technologies and their applications. 
+                  Experimenting with various AI models and tools to understand the 
+                  future of technology and automation.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="bg-purple-500/10 text-purple-300 border-purple-500/30 text-xs">
+                    Machine Learning
+                  </Badge>
+                  <Badge variant="outline" className="bg-purple-500/10 text-purple-300 border-purple-500/30 text-xs">
+                    AI Models
+                  </Badge>
+                  <Badge variant="outline" className="bg-purple-500/10 text-purple-300 border-purple-500/30 text-xs">
+                    Automation
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Blog Coming Soon Card */}
+            <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-cyan-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-cyan-500/20 sm:col-span-2">
+              <CardHeader>
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="p-2 bg-cyan-500/10 rounded-lg">
+                    <BookOpen className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-cyan-400 transition-colors">
+                        Tech Blog
+                      </CardTitle>
+                      <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 text-xs">
+                        Coming Soon
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+                <CardDescription className="text-base text-gray-400">
+                  Sharing knowledge and experiences
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  Building a simple blog platform to share insights about development, technology, and my learning journey. 
+                  Articles will cover topics like web development, DevOps, self-hosting, and more.
+                </p>
+                <div className="flex items-center gap-3 text-sm text-cyan-400">
+                  <Rocket className="w-4 h-4" />
+                  <span>Blog platform in development - Stay tuned!</span>
                 </div>
               </CardContent>
             </Card>
