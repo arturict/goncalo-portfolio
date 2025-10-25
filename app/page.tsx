@@ -369,7 +369,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-400">Resources</span>
-                    <span className="text-orange-400 font-semibold">12 cores (i5/i7), 40GB RAM</span>
+                    <span className="text-orange-400 font-semibold">8 cores/16 threads, 40GB RAM</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-400">Storage</span>
