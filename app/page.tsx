@@ -364,26 +364,26 @@ export default function Portfolio() {
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Cluster Nodes</span>
-                    <span className="text-white font-semibold">4 Nodes</span>
+                    <span className="text-gray-400">Always-On Nodes</span>
+                    <span className="text-white font-semibold">2 Nodes 24/7</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Total RAM</span>
-                    <span className="text-orange-400 font-semibold">264GB</span>
+                    <span className="text-gray-400">Resources</span>
+                    <span className="text-orange-400 font-semibold">12 cores, 40GB RAM</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Configuration</span>
-                    <span className="text-gray-300 font-mono text-xs">128+96+32+8 GB</span>
+                    <span className="text-gray-400">Storage</span>
+                    <span className="text-gray-300 font-semibold">7TB</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Always-On</span>
-                    <span className="text-green-400 font-semibold">40GB RAM 24/7</span>
+                    <span className="text-gray-400">Cloud Equivalent</span>
+                    <span className="text-green-400 font-semibold">~$370/month</span>
                   </div>
                 </div>
                 <div className="pt-3 border-t border-gray-700">
                   <p className="text-sm text-gray-300 leading-relaxed">
-                    Self-hosted <span className="text-orange-400 font-semibold">Coolify PaaS</span> for 
-                    seamless deployments. Running production services 24/7.
+                    Running databases, media servers, DNS & self-hosted alternatives (Immich, cloud storage). 
+                    Powered by <span className="text-orange-400 font-semibold">Proxmox</span> with enterprise-grade reliability.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -391,13 +391,13 @@ export default function Portfolio() {
                     Proxmox
                   </Badge>
                   <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
-                    Coolify
+                    7TB Storage
                   </Badge>
                   <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
                     Self-Hosted
                   </Badge>
-                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
-                    24/7 Uptime
+                  <Badge variant="outline" className="bg-green-500/10 text-green-300 border-green-500/30 text-xs">
+                    Saves $4.4k/year
                   </Badge>
                 </div>
               </CardContent>
