@@ -1,41 +1,41 @@
 # Artur Ferreira - Portfolio
 
-Ein modernes Dark-Mode Portfolio mit smooth Scroll-Animationen und Mouse-Reactive Background, gebaut mit Next.js 16, Tailwind CSS und shadcn/ui.
+> **Frontend-only** portfolio website showcasing skills, experience, and projects. Built with Next.js 16, Tailwind CSS v4, and shadcn/ui.
+
+🌐 **Live:** [arturf.ch](https://arturf.ch)
 
 ![Portfolio](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)
 ![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat&logo=tailwindcss)
 ![Bun](https://img.shields.io/badge/Bun-1.3-000000?style=flat&logo=bun)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat&logo=typescript)
 
+## 🚀 Quick Start
+
+```bash
+# Clone and install
+git clone https://github.com/arturict/portfolio.git
+cd portfolio
+bun install
+
+# Development
+bun run dev          # Start dev server at localhost:3000
+
+# Production
+bun run build        # Build for production
+bun run start        # Start production server
+```
+
 ## 🌐 Deployments
 
-### Production
-- **URL**: https://arturf.ch
-- **Branch**: `main`
-- **Auto-Deploy**: On push to main
-- **Status**: Stable Release
+| Environment | URL | Branch | Status |
+|------------|-----|--------|--------|
+| **Production** | [arturf.ch](https://arturf.ch) | `main` | ✅ Live |
+| **Development** | [portfolio-dev.artur.engineer](https://portfolio-dev.artur.engineer) | `dev` | 🧪 Preview |
 
-### Development
-- **URL**: https://portfolio-dev.artur.engineer
-- **Branch**: `dev`
-- **Auto-Deploy**: On push to dev
-- **Status**: Testing & Preview
-
-## 🔄 Branching Strategy
-
-### Main Branch (Production)
-- **Protected**: Only merge from `dev` when stable
-- **Deploys to**: arturf.ch
-- **Purpose**: Production-ready releases only
-
-### Dev Branch (Development)
-- **Active Development**: All new features here
-- **Deploys to**: portfolio-dev.artur.engineer
-- **Purpose**: Testing and iteration
-- **Workflow**: 
-  1. Make changes on `dev`
-  2. Test on portfolio-dev.artur.engineer
-  3. When stable → Merge to `main`
+### Deployment Workflow
+1. **Develop** on `dev` branch → Auto-deploys to preview
+2. **Test** changes on portfolio-dev.artur.engineer
+3. **Merge** `dev` to `main` → Auto-deploys to production
 
 ## ✨ Features
 
@@ -165,32 +165,20 @@ docker run -d -p 3000:3000 portfolio:latest
 docker logs -f <container-id>
 ```
 
-## 📝 Inhalt
+## 👤 About
 
-Portfolio für **Artur Ferreira**:
+**Artur Ferreira** - Informatiker EFZ Applikationsentwickler (3. Lehrjahr)  
+CKW AG / Axpo Group | Graduating August 2027
 
-### Profile
-- **Role**: Informatiker EFZ Applikationsentwickler (3. Lehrjahr)
-- **Company**: CKW AG / Axpo Group (Microsoft Technologies)
-- **School**: Berufsbildungszentrum Wirtschaft, Informatik und Technik Sursee
-- **Graduation**: August 2027
+**Tech Stack:**
+- Frontend: Vue.js, React, Next.js, Tailwind CSS
+- Backend: .NET, C#, ASP.NET, PHP, Laravel, Node.js
+- Database: MSSQL, MySQL, MongoDB, PostgreSQL
+- Other: Docker, Git, REST APIs, WebSocket
 
-### Skills
-- **Frontend**: Vue.js, React, Next.js, JavaScript, HTML/CSS, Tailwind CSS
-- **Backend**: .NET, ASP.NET, C#, PHP, Laravel, Python, Node.js
-- **Database**: MSSQL, MySQL, MongoDB, PostgreSQL
-- **Other**: REST APIs, WebSocket, Real-time Apps, Docker, Git
+**Featured Project:** CodeCellar - Real-time collaborative code editor (2024 Young Talents Hackathon)
 
-### Featured Project
-- **CodeCellar**: Real-time collaborative code editor
-- **Event**: 2024 Young Talents Hackathon
-- **Tech**: Monaco Editor, WebSocket, Real-time Sync
-- **Link**: https://young-talents-hackathon.ch/
-
-### Contact
-- **Email**: artur@ferreiracruz.com
-- **GitHub**: https://github.com/arturict
-- **LinkedIn**: https://www.linkedin.com/in/artur-ferreira7
+📧 [artur@ferreiracruz.com](mailto:artur@ferreiracruz.com) | 🐙 [GitHub](https://github.com/arturict) | 💼 [LinkedIn](https://www.linkedin.com/in/artur-ferreira7)
 
 ## 🎨 Customization
 
@@ -217,21 +205,22 @@ const skills = {
 }
 ```
 
-## 📁 Projekt Struktur
+## 📁 Project Structure
 
 ```
 portfolio/
- app/
-   ├── page.tsx              # Portfolio Hauptseite (Dark Mode + Mouse Tracking)
-   ├── layout.tsx            # Root Layout mit Metadata
-   ├── globals.css           # Dark theme + Animations
-   └── api/health/           # Health Check Endpoint
- components/
-   └── ui/                   # shadcn/ui Komponenten
- public/                   # Statische Assets
- Dockerfile                # Production-ready Docker
- BACKEND.md               # Backend API Documentation
- README.md                # This file
+├── app/
+│   ├── page.tsx          # Main portfolio page (Client Component)
+│   ├── layout.tsx        # Root layout with metadata
+│   ├── globals.css       # Dark theme + animations
+│   └── api/health/       # Health check endpoint
+├── components/ui/        # shadcn/ui components
+├── lib/                  # Utility functions
+├── public/               # Static assets
+├── Dockerfile            # Production Docker config
+├── BACKEND.md            # Backend API docs (future)
+├── DOCS.md               # Content & deployment docs
+└── README.md             # This file
 ```
 
 ## 🔧 Commands
@@ -259,9 +248,9 @@ git merge dev                 # Merge dev into main
 
 ## 📚 Documentation
 
-- [BACKEND.md](./BACKEND.md) - Backend API Documentation (für Phase 2)
-- [.github/copilot-instructions.md](./.github/copilot-instructions.md) - GitHub Copilot Instructions
-- Backend API URL: `https://portfolio-v2-dev.artur.engineer`
+- **[DOCS.md](./DOCS.md)** - Content reference & deployment guide
+- **[BACKEND.md](./BACKEND.md)** - Backend API documentation (future phase)
+- **[.github/copilot-instructions.md](./.github/copilot-instructions.md)** - Development guidelines
 
 ## 🌟 Key Features Explained
 
@@ -319,14 +308,12 @@ Cards with backdrop blur:
 - **Desktop**: 1024px+ (Full grid layouts)
 - **Large**: 1920px+ (Max width container)
 
-## 🔐 Environment Variables
+## ⚙️ Environment
 
-No environment variables needed for frontend-only deployment.
+**Frontend-only deployment** - No environment variables required.
 
-For future backend integration, add to `.env.local`:
-```env
-NEXT_PUBLIC_API_URL=https://portfolio-v2-dev.artur.engineer
-```
+Future backend integration will use:
+- `NEXT_PUBLIC_API_URL=https://portfolio-v2-dev.artur.engineer`
 
 ## 📄 Lizenz
 
