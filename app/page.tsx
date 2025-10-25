@@ -358,7 +358,7 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <CardDescription className="text-base text-gray-400">
-                  Proxmox cluster with enterprise-grade infrastructure
+                  Production-grade Proxmox setup for learning & experimentation
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -369,21 +369,26 @@ export default function Portfolio() {
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-400">Resources</span>
-                    <span className="text-orange-400 font-semibold">12 cores, 40GB RAM</span>
+                    <span className="text-orange-400 font-semibold">12 cores (i5/i7), 40GB RAM</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-400">Storage</span>
-                    <span className="text-gray-300 font-semibold">7TB</span>
+                    <span className="text-gray-300 font-semibold">7TB (5TB HDD + 2TB SSD)</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-400">Cloud Equivalent</span>
-                    <span className="text-green-400 font-semibold">~$370/month</span>
+                    <span className="text-green-400 font-semibold">~CHF 600/month</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">Power Consumption</span>
+                    <span className="text-green-400 font-semibold">~22 kWh/month (CHF 5.50)</span>
                   </div>
                 </div>
                 <div className="pt-3 border-t border-gray-700">
                   <p className="text-sm text-gray-300 leading-relaxed">
-                    Running databases, media servers, DNS & self-hosted alternatives (Immich, cloud storage). 
-                    Powered by <span className="text-orange-400 font-semibold">Proxmox</span> with enterprise-grade reliability.
+                    Production-ready lab for deploying projects with <span className="text-orange-400 font-semibold">Docker</span> & 
+                    <span className="text-orange-400 font-semibold"> PaaS</span>, experimenting with PostgreSQL, MySQL, DevOps practices. 
+                    Aiming at <span className="text-green-400 font-semibold">99% uptime</span>. Highly energy-efficient setup.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -393,11 +398,11 @@ export default function Portfolio() {
                   <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
                     7TB Storage
                   </Badge>
-                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
-                    Self-Hosted
+                  <Badge variant="outline" className="bg-green-500/10 text-green-300 border-green-500/30 text-xs">
+                    99% Uptime Goal
                   </Badge>
                   <Badge variant="outline" className="bg-green-500/10 text-green-300 border-green-500/30 text-xs">
-                    Saves $4.4k/year
+                    Saves ~CHF 7k/year
                   </Badge>
                 </div>
               </CardContent>
