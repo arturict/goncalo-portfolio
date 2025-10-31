@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { PHProvider, PostHogPageView } from "./providers";
-import { Suspense } from "react";
+import { PHProvider } from "./providers";
 
 export const metadata: Metadata = {
   title: "Artur Ferreira - Full-Stack Developer",
@@ -51,9 +50,6 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="antialiased bg-black text-white">
         <PHProvider>
-          <Suspense fallback={null}>
-            <PostHogPageView />
-          </Suspense>
           {children}
         </PHProvider>
       </body>
