@@ -4,5 +4,9 @@ if (typeof window !== 'undefined') {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
     api_host: '/ingest',
     ui_host: 'https://eu.i.posthog.com',
+    disable_session_recording: false,
+    enable_recording_console_log: false,
+    persistence: 'localStorage+cookie',
+    respect_dnt: true,
   });
 }
