@@ -21,11 +21,10 @@ import {
   Rocket
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { usePostHog } from 'posthog-js/react';
+import posthog from 'posthog-js';
 
 export default function Portfolio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const posthog = usePostHog();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -119,7 +118,7 @@ export default function Portfolio() {
                 href="https://github.com/arturict" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => posthog?.capture('github_link_clicked', { location: 'hero' })}
+                onClick={() => posthog.capture('github_link_clicked', { location: 'hero' })}
               >
                 <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 GitHub
@@ -135,7 +134,7 @@ export default function Portfolio() {
                 href="https://www.linkedin.com/in/artur-ferreira7" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => posthog?.capture('linkedin_link_clicked', { location: 'hero' })}
+                onClick={() => posthog.capture('linkedin_link_clicked', { location: 'hero' })}
               >
                 <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
                 LinkedIn
@@ -149,7 +148,7 @@ export default function Portfolio() {
             >
               <a 
                 href="mailto:artur@ferreiracruz.com"
-                onClick={() => posthog?.capture('email_link_clicked', { location: 'hero' })}
+                onClick={() => posthog.capture('email_link_clicked', { location: 'hero' })}
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
                 Contact
@@ -535,7 +534,7 @@ export default function Portfolio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-yellow-400 hover:text-yellow-300 underline decoration-yellow-400/30 hover:decoration-yellow-400 transition-all"
-                  onClick={() => posthog?.capture('hackathon_link_clicked')}
+                  onClick={() => posthog.capture('hackathon_link_clicked')}
                 >
                   2024 Young Talents Hackathon
                 </a>
@@ -579,7 +578,7 @@ export default function Portfolio() {
                 >
                   <a 
                     href="mailto:artur@ferreiracruz.com"
-                    onClick={() => posthog?.capture('email_link_clicked', { location: 'cta' })}
+                    onClick={() => posthog.capture('email_link_clicked', { location: 'cta' })}
                   >
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
                     Get in Touch
@@ -595,7 +594,7 @@ export default function Portfolio() {
                     href="https://github.com/arturict" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    onClick={() => posthog?.capture('github_link_clicked', { location: 'cta' })}
+                    onClick={() => posthog.capture('github_link_clicked', { location: 'cta' })}
                   >
                     <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-12 transition-transform" />
                     View GitHub
@@ -620,7 +619,7 @@ export default function Portfolio() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-cyan-400 transition-colors"
-                onClick={() => posthog?.capture('github_link_clicked', { location: 'footer' })}
+                onClick={() => posthog.capture('github_link_clicked', { location: 'footer' })}
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -629,14 +628,14 @@ export default function Portfolio() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-cyan-400 transition-colors"
-                onClick={() => posthog?.capture('linkedin_link_clicked', { location: 'footer' })}
+                onClick={() => posthog.capture('linkedin_link_clicked', { location: 'footer' })}
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
                 href="mailto:artur@ferreiracruz.com"
                 className="text-gray-500 hover:text-cyan-400 transition-colors"
-                onClick={() => posthog?.capture('email_link_clicked', { location: 'footer' })}
+                onClick={() => posthog.capture('email_link_clicked', { location: 'footer' })}
               >
                 <Mail className="w-5 h-5" />
               </a>
