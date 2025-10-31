@@ -19,7 +19,16 @@ PostHog analytics has been successfully integrated into your Next.js 16 portfoli
 - Next.js rewrites `/ingest/*` → `https://us.i.posthog.com/*`
 - Next.js rewrites `/ingest/static/*` → `https://us-assets.i.posthog.com/static/*`
 - **Solves CORS and CSP issues** by keeping requests on same domain
-- Content Security Policy headers configured for PostHog
+
+### 3. **Full Bundle with Pre-loaded Extensions** (`instrumentation-client.ts`)
+- Uses `posthog-js/dist/module.no-external` for CSP compliance
+- Pre-bundles all extensions at build time:
+  - Session Replay recorder
+  - Surveys
+  - Exception autocapture
+  - Web Vitals tracking
+- **No external script loading** - everything bundled in your app
+- Perfect for strict Content Security Policy environments
 
 ### 2. **Automatic Page View Tracking**
 - Implemented `onRouterTransitionStart()` function
@@ -36,10 +45,12 @@ The following events are already tracked in your portfolio:
 ## 🛡️ Security & Performance
 
 - **No CORS Issues**: Reverse proxy keeps all requests on your domain
-- **CSP Compliant**: Content Security Policy headers properly configured
+- **CSP Compliant**: Full bundle with no external script loading
 - **No Cookie Warnings**: Cookies set from your own domain
 - **Better Privacy**: PostHog requests appear as first-party traffic
 - **Ad-Blocker Friendly**: `/ingest` path is harder to block than direct PostHog URLs
+- **Optimized Bundle**: All extensions pre-loaded at build time (no lazy loading delays)
+- **Works in Restricted Environments**: Chrome Extensions, Electron apps, strict CSP
 
 ## 📊 Features Enabled
 
