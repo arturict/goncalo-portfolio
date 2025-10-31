@@ -10,8 +10,8 @@ PostHog analytics has been successfully integrated into your Next.js 16 portfoli
 - Uses Next.js 16's client-side instrumentation file
 - Automatically runs before the app starts on the client
 - Configured with your environment variables:
-  - `NEXT_PUBLIC_POSTHOG_KEY=phc_CwTfRIngLqtTRGTm4N4dD6dwOiFPF8I7iS61eP05r9g`
-  - `NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com`
+  - `NEXT_PUBLIC_POSTHOG_KEY=phc_ILTzd07APPJtPPqD0NUncZTcdn9CcWEUocFdEfTQvLL`
+  - `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`
 
 ### 2. **Automatic Page View Tracking**
 - Implemented `onRouterTransitionStart()` function
@@ -30,7 +30,7 @@ The following events are already tracked in your portfolio:
 - ✅ **Autocapture**: Automatically captures clicks, form submissions
 - ✅ **Session Recording**: Enabled for user behavior analysis
 - ✅ **Page Leave Tracking**: Tracks when users leave pages
-- ✅ **Feature Flags**: Ready to use (fetched from EU server)
+- ✅ **Feature Flags**: Ready to use (fetched from US server)
 - ✅ **Web Vitals**: Automatically tracked (Core Web Vitals)
 
 ## 🧪 Testing Performed
@@ -38,23 +38,24 @@ The following events are already tracked in your portfolio:
 1. ✅ Built successfully with `bun run build`
 2. ✅ Started dev server and loaded the page
 3. ✅ PostHog initialized correctly
-4. ✅ Config loaded from `https://eu-assets.i.posthog.com`
-5. ✅ Feature flags fetched from `https://eu.i.posthog.com/flags/`
+4. ✅ Config loaded from `https://us-assets.i.posthog.com`
+5. ✅ Feature flags fetched from `https://us.i.posthog.com/flags/`
 6. ✅ Clicked GitHub button → Event triggered
 7. ✅ Clicked LinkedIn button → Event triggered
+8. ✅ Clicked Contact button → Email event triggered
 
 ## 📝 Environment Variables
 
 Add these to your Coolify deployment:
 
 ```env
-NEXT_PUBLIC_POSTHOG_KEY=phc_CwTfRIngLqtTRGTm4N4dD6dwOiFPF8I7iS61eP05r9g
-NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com
+NEXT_PUBLIC_POSTHOG_KEY=phc_ILTzd07APPJtPPqD0NUncZTcdn9CcWEUocFdEfTQvLL
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 ```
 
 ## 🎯 How to View Analytics
 
-1. Go to https://eu.i.posthog.com
+1. Go to https://us.i.posthog.com (US region)
 2. Log in with your PostHog account
 3. Navigate to your project dashboard
 4. View:
@@ -103,7 +104,7 @@ posthog.capture('scroll_to_section', { section: 'experience' })
 
 - PostHog Docs: https://posthog.com/docs
 - Next.js Instrumentation: https://nextjs.org/docs/app/building-your-application/optimizing/instrumentation
-- Your Dashboard: https://eu.i.posthog.com
+- Your Dashboard: https://us.i.posthog.com
 
 ## 🐛 Troubleshooting
 
