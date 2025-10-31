@@ -3,14 +3,20 @@
 import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 import { useEffect } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 if (typeof window !== 'undefined') {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-    person_profiles: 'identified_only',
-    capture_pageview: false,
-    capture_pageleave: true,
-  })
+  const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
+  const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST
+
+  if (posthogKey && posthogHost) {
+    posthog.init(posthogKey, {
+      api_host: posthogHost,
+      person_profiles: 'identified_only',
+      capture_pageview: false,
+      capture_pageleave: true,
+    })
+  }
 }
 
 export function PHProvider({ children }: { children: React.ReactNode }) {
@@ -18,13 +24,20 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function PostHogPageView() {
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
-  
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
   useEffect(() => {
-    if (pathname) {
-      posthog.capture('$pageview')
+    if (pathname && posthog) {
+      let url = window.origin + pathname
+      if (searchParams && searchParams.toString()) {
+        url = url + `?${searchParams.toString()}`
+      }
+      posthog.capture('$pageview', {
+        $current_url: url,
+      })
     }
-  }, [pathname])
+  }, [pathname, searchParams])
 
   return null
 }
