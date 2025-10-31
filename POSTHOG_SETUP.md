@@ -9,9 +9,17 @@ PostHog analytics has been successfully integrated into your Next.js 16 portfoli
 ### 1. **PostHog Client Initialization** (`instrumentation-client.ts`)
 - Uses Next.js 16's client-side instrumentation file
 - Automatically runs before the app starts on the client
+- **Uses reverse proxy** (`/ingest`) to avoid CORS issues
 - Configured with your environment variables:
   - `NEXT_PUBLIC_POSTHOG_KEY=phc_ILTzd07APPJtPPqD0NUncZTcdn9CcWEUocFdEfTQvLL`
   - `NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`
+
+### 2. **Reverse Proxy Configuration** (`next.config.ts`)
+- All PostHog requests go through `/ingest` path on your domain
+- Next.js rewrites `/ingest/*` → `https://us.i.posthog.com/*`
+- Next.js rewrites `/ingest/static/*` → `https://us-assets.i.posthog.com/static/*`
+- **Solves CORS and CSP issues** by keeping requests on same domain
+- Content Security Policy headers configured for PostHog
 
 ### 2. **Automatic Page View Tracking**
 - Implemented `onRouterTransitionStart()` function
@@ -25,6 +33,14 @@ The following events are already tracked in your portfolio:
 - **Email Link Clicks**: `email_link_clicked` (hero, CTA)
 - **Hackathon Link Clicks**: `hackathon_link_clicked`
 
+## 🛡️ Security & Performance
+
+- **No CORS Issues**: Reverse proxy keeps all requests on your domain
+- **CSP Compliant**: Content Security Policy headers properly configured
+- **No Cookie Warnings**: Cookies set from your own domain
+- **Better Privacy**: PostHog requests appear as first-party traffic
+- **Ad-Blocker Friendly**: `/ingest` path is harder to block than direct PostHog URLs
+
 ## 📊 Features Enabled
 
 - ✅ **Autocapture**: Automatically captures clicks, form submissions
@@ -37,12 +53,14 @@ The following events are already tracked in your portfolio:
 
 1. ✅ Built successfully with `bun run build`
 2. ✅ Started dev server and loaded the page
-3. ✅ PostHog initialized correctly
-4. ✅ Config loaded from `https://us-assets.i.posthog.com`
-5. ✅ Feature flags fetched from `https://us.i.posthog.com/flags/`
+3. ✅ PostHog initialized correctly via `/ingest` proxy
+4. ✅ Config loaded through proxy (no CORS errors)
+5. ✅ Feature flags fetched through proxy (no CORS errors)
 6. ✅ Clicked GitHub button → Event triggered
 7. ✅ Clicked LinkedIn button → Event triggered
 8. ✅ Clicked Contact button → Email event triggered
+9. ✅ **Zero CORS errors** in browser console
+10. ✅ **Zero CSP violations** in browser console
 
 ## 📝 Environment Variables
 
@@ -111,8 +129,11 @@ posthog.capture('scroll_to_section', { section: 'experience' })
 If events aren't showing up:
 1. Check browser console for errors
 2. Verify environment variables are set
-3. Check Network tab for PostHog requests
-4. Ensure ad blockers aren't blocking PostHog
+3. Check Network tab for `/ingest` requests (not direct PostHog URLs)
+4. Ensure your server is proxying requests correctly
+5. Verify Coolify environment variables match the ones in this doc
+
+**Note**: All PostHog requests now go through `/ingest/*` on your domain, so you shouldn't see any requests to `us.i.posthog.com` in the Network tab - this is normal and expected!
 
 ---
 
