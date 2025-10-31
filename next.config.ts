@@ -12,13 +12,8 @@ const nextConfig: NextConfig = {
         source: '/ingest/:path*',
         destination: 'https://eu.i.posthog.com/:path*',
       },
-      {
-        source: '/ingest/decide',
-        destination: 'https://eu.i.posthog.com/decide',
-      },
     ];
   },
-  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

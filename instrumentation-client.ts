@@ -1,7 +1,8 @@
 import posthog from 'posthog-js'
 
-posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-  api_host: '/ingest',
-  ui_host: 'https://eu.i.posthog.com',
-  defaults: '2025-05-24'
-});
+if (typeof window !== 'undefined') {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
+    api_host: '/ingest',
+    ui_host: 'https://eu.i.posthog.com',
+  });
+}
