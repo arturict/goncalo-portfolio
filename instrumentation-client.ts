@@ -1,4 +1,8 @@
-import posthog from 'posthog-js'
+import 'posthog-js/dist/recorder'
+import 'posthog-js/dist/surveys'
+import 'posthog-js/dist/exception-autocapture'
+import 'posthog-js/dist/web-vitals'
+import posthog from 'posthog-js/dist/module.no-external'
 
 posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
   api_host: '/ingest',
