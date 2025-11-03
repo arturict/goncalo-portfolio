@@ -1,0 +1,45 @@
+{
+  "buildPack": "dockerfile",
+  "port": 3000,
+  "fqdn": "goncalo.artur.engineer",
+  "buildCommand": null,
+  "startCommand": null,
+  "baseDirectory": null,
+  "publishDirectory": null,
+  "rootDirectory": null,
+  "dockerfile": "Dockerfile",
+  "dockerComposeFile": null,
+  "dockerComposeFileLocation": null,
+  "dockerFileLocation": null,
+  "installCommand": null,
+  "buildArgs": null,
+  "singularityImage": null,
+  "singularityImageRegistry": null,
+  "singularityImageUsername": null,
+  "singularityImagePassword": null,
+  "healthCheckPath": "/",
+  "healthCheckInterval": 30,
+  "healthCheckTimeout": 5,
+  "healthCheckRetries": 3,
+  "previewDeployProcessId": null,
+  "previewSslPath": null,
+  "gitSource": {
+    "gitUrl": "https://github.com/arturict/goncalo-portfolio.git",
+    "gitBranch": "main",
+    "gitCommitSha": null,
+    "gitToken": null
+  },
+  "settings": {
+    "environmentVariables": {
+      "NODE_ENV": "production"
+    },
+    "resourcesMin": {
+      "cpus": "0.5",
+      "memory": "256M"
+    },
+    "resourcesMax": {
+      "cpus": "2",
+      "memory": "1G"
+    }
+  }
+}
