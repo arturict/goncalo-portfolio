@@ -30,4 +30,8 @@ COPY --from=prerelease /usr/src/app/package.json .
 
 EXPOSE 3000
 ENV NODE_ENV=production
+
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 --start-period=10s \
+    CMD curl -f http://localhost:3000/ || exit 1
+
 CMD ["bun", "run", "start"]
