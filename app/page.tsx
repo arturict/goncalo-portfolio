@@ -4,21 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Github, 
   Linkedin, 
   Mail, 
   Briefcase, 
-  GraduationCap, 
-  Code2, 
-  Trophy,
+  GraduationCap,
+  Users,
+  Award,
   ArrowRight,
   Sparkles,
   Zap,
   Calendar,
-  Server,
-  Brain,
-  BookOpen,
-  Rocket
+  Heart,
+  Target,
+  Handshake
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -84,7 +82,7 @@ export default function Portfolio() {
         <div className="relative z-10 max-w-6xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-4 hover:bg-white/10 transition-all duration-300 group">
             <Sparkles className="w-4 h-4 text-cyan-400 group-hover:rotate-12 transition-transform" />
-            <span className="text-sm font-medium text-gray-300">Graduating August 2026</span>
+            <span className="text-sm font-medium text-gray-300">3rd Year Commercial Apprentice</span>
           </div>
 
           <div className="space-y-6 animate-fade-in">
@@ -94,12 +92,12 @@ export default function Portfolio() {
               </span>
             </h1>
             <div className="flex items-center justify-center gap-2 text-lg sm:text-xl md:text-2xl text-gray-400">
-              <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
+              <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
               <p className="font-mono text-center">Kaufmann EFZ Lehrling</p>
             </div>
             <p className="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 leading-relaxed px-4">
-              2nd year apprentice at <span className="text-cyan-400 font-semibold">CALIDA AG</span>, 
-              based in <span className="text-blue-400 font-semibold">Emmen, Luzern</span>, learning business and commercial skills
+              3rd year apprentice at <span className="text-cyan-400 font-semibold">CALIDA AG</span> in <span className="text-blue-400 font-semibold">Sursee</span>, 
+              based in <span className="text-blue-400 font-semibold">Emmen</span>, developing expertise in retail operations, customer service, and business management
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
               <Calendar className="w-4 h-4 text-blue-400" />
@@ -111,21 +109,6 @@ export default function Portfolio() {
             <Button 
               size="lg" 
               className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white border-0 shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 text-sm sm:text-base"
-              asChild
-            >
-              <a 
-                href="https://github.com/goncalo-torres-novo" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                GitHub
-              </a>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="group bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 backdrop-blur-sm text-sm sm:text-base"
               asChild
             >
               <a 
@@ -242,7 +225,7 @@ export default function Portfolio() {
         <section className="space-y-8 sm:space-y-12 scroll-fade-in">
           <div className="flex items-center gap-4 mb-8 sm:mb-12">
             <div className="p-2 sm:p-3 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-500/30">
-              <Code2 className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+              <Target className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
             </div>
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Core Competencies</h2>
@@ -345,7 +328,7 @@ export default function Portfolio() {
         <section className="space-y-8 sm:space-y-12 scroll-fade-in">
           <div className="flex items-center gap-4 mb-8 sm:mb-12">
             <div className="p-2 sm:p-3 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl border border-orange-500/30">
-              <Server className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400" />
+              <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400" />
             </div>
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">About Me</h2>
@@ -361,27 +344,24 @@ export default function Portfolio() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-                I am a commercial apprentice (Kaufmann EFZ Lehrling) in my second year of training at CALIDA AG, 
-                a leading fashion and retail company based in Emmen, Luzern, Switzerland. I am gaining practical 
-                experience in retail operations, customer service, business management, and team collaboration.
+                I am a commercial apprentice (Kaufmann EFZ Lehrling) in my third year of training at CALIDA AG, 
+                a leading fashion and retail company based in Sursee. I am based in Emmen and gaining practical 
+                experience in retail operations, customer service, business management, and team collaboration in a dynamic environment.
               </p>
               <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-                My apprenticeship is designed to provide comprehensive training in commercial and business operations, 
-                with an expected completion date of August 2026. I am committed to developing professional skills and 
-                contributing effectively to the organization.
+                My apprenticeship provides comprehensive training in commercial and business operations, 
+                with completion in August 2026. I am committed to developing professional skills and making 
+                meaningful contributions to the organization and retail sector.
               </p>
               <div className="flex flex-wrap gap-2 pt-4">
                 <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30">
-                  CALIDA AG
+                  CALIDA AG Sursee
                 </Badge>
                 <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30">
-                  Emmen, LU
+                  Based in Emmen
                 </Badge>
                 <Badge variant="outline" className="bg-green-500/10 text-green-300 border-green-500/30">
-                  Graduating Aug 2026
-                </Badge>
-                <Badge variant="outline" className="bg-blue-500/10 text-blue-300 border-blue-500/30">
-                  38 LinkedIn Contacts
+                  Completing Aug 2026
                 </Badge>
               </div>
             </CardContent>
@@ -445,18 +425,10 @@ export default function Portfolio() {
                 © {new Date().getFullYear()} Gonçalo Torres Novo. Crafted with Next.js, Tailwind CSS & shadcn/ui
               </p>
               <p className="text-gray-600 text-xs">
-                Design & Development by <a href="https://artur.engineer" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">Artur Ferreira</a>
+                Design & Development by <a href="https://arturf.ch" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">Artur Ferreira</a>
               </p>
             </div>
             <div className="flex items-center gap-6">
-              <a 
-                href="https://github.com/goncalo-torres-novo" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-cyan-400 transition-colors"
-              >
-                <Github className="w-5 h-5" />
-              </a>
               <a 
                 href="https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/" 
                 target="_blank" 
