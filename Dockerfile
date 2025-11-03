@@ -1,7 +1,8 @@
 # Multi-stage Docker build for Gonçalo's portfolio using Bun
 # Optimized for fast builds and minimal image size
+# Using Bun latest version with native health check
 
-FROM oven/bun:1 AS base
+FROM oven/bun:latest AS base
 WORKDIR /usr/src/app
 
 # Stage 1: Install dependencies (cached layer)
@@ -35,8 +36,9 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Health check using wget (built into Bun image)
+# Health check using native HTTP endpoint
+# Uses the /api/health endpoint that Next.js serves
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 --start-period=10s \
-    CMD bun --eval "import {fetch} from 'bun'; const r = await fetch('http://localhost:3000/'); process.exit(r.ok ? 0 : 1);" || exit 1
+    CMD bun --eval "const res = await fetch('http://localhost:3000/api/health'); process.exit(res.ok ? 0 : 1)" || exit 1
 
 CMD ["bun", "run", "start"]
