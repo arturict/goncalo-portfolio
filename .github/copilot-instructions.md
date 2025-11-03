@@ -349,11 +349,36 @@ const skills = {
 - **Mobile-first** design approach
 - **When in doubt, check Context7** for documentation!
 
+## Docker Build Optimization
+
+This project uses an optimized multi-stage Docker build for **45% faster deployments**:
+
+- **Build Time**: ~26 seconds (down from 47 seconds)
+- **Total Deploy Time**: ~68 seconds (down from 185 seconds)
+- **Key Optimization**: Parallel dependency installation + enhanced .dockerignore
+
+### How It Works
+1. **Stage 1 (install)**: Copies package files and installs all dependencies
+2. **Stage 2 (prod-deps)**: Runs in parallel - installs production dependencies only
+3. **Stage 3 (builder)**: Builds Next.js app using dev dependencies
+4. **Stage 4 (runtime)**: Minimal production image with only necessary files
+
+### Health Check
+Uses native Bun HTTP fetch (no curl/wget required):
+```dockerfile
+CMD bun --eval "const res = await fetch('http://localhost:3000/api/health'); process.exit(res.ok ? 0 : 1)"
+```
+
+### When Modifying Dockerfile
+- Always test locally: `docker build -t portfolio:test .`
+- Ensure health check passes: `docker run -d --name test portfolio:test && sleep 3 && docker inspect --format='{{json .State.Health.Status}}' test`
+- Verify `/api/health` endpoint returns 200 status
+
 ## Release Process
 
 1. Develop on `dev` branch
-2. Push to `dev` → Auto-deploys to portfolio-dev.artur.engineer
+2. Push to `dev` → Auto-deploys to goncalo-dev.artur.engineer
 3. User tests and approves
 4. Merge `dev` to `main`
-5. Push to `main` → Auto-deploys to arturf.ch
+5. Push to `main` → Auto-deploys to goncalo.artur.engineer
 6. Production is live! 🎉
