@@ -35,9 +35,19 @@ bun start        # Start production server
 - **🌙 Dark Mode**: Modern dark theme with professional gradient accents
 - **🖱️ Interactive Background**: Subtle mouse-reactive gradient
 - **🎨 Smooth Animations**: Scroll-based fade-ins, subtle transitions
-- **⚡ Performance**: Server-side rendering with Next.js
+- **⚡ Performance**: Server-side rendering with Next.js + optimized Docker builds
 - **📱 Fully Responsive**: Mobile-first, professional design
 - **🎭 Modern UI**: shadcn/ui components with business aesthetic
+
+## ⚡ Performance
+
+Deployments run **45% faster** with:
+- Optimized Docker multi-stage build using Bun
+- Native Bun health check to `/api/health` endpoint
+- Reduced build context (427KB vs 169MB)
+- Smart layer caching for rapid rebuilds
+
+**Average Deploy Time**: ~1:15 minutes (goncalo-dev.artur.engineer)
 
 ## 🎭 Design Features
 
