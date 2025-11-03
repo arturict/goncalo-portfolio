@@ -1,37 +1,44 @@
-# GitHub Copilot Instructions - Portfolio Project
+# GitHub Copilot Instructions - Gonçalo's Portfolio
 
 ## Project Overview
 
-This is a **frontend-only** portfolio website for Artur Ferreira built with Next.js 16, Tailwind CSS, and shadcn/ui.
+This is a **professional portfolio website** for Gonçalo Torres Novo (Commercial Apprentice) built with Next.js 16, Tailwind CSS, and shadcn/ui.
 
-**Important**: This is a static portfolio website with NO backend, NO database, NO authentication.
+**Important**: This is a commercial apprentice portfolio - NO backend, NO database, NO authentication. Focus is on professional business presentation, not technical/development showcase.
 
 ## 🌐 Deployment & Branching
 
-### Branch Strategy
+### Production & Development URLs
 
 #### Main Branch (Production)
-- **URL**: https://arturf.ch
-- **Purpose**: Stable production releases only
-- **Protected**: Only merge from `dev` when tested and stable
-- **Auto-Deploy**: Coolify deploys on push
+- **URL**: https://goncalo.artur.engineer
+- **Purpose**: Live production portfolio
+- **Auto-Deploy**: Coolify deploys on every push to `main`
+- **Status**: Only merge after user approval
 
-#### Dev Branch (Development)
-- **URL**: https://portfolio-dev.artur.engineer
-- **Purpose**: Active development and testing
-- **Workflow**: ALL new features and changes go here first
-- **Auto-Deploy**: Coolify deploys on push for preview
+#### Dev Branch (Development/Preview)
+- **URL**: https://goncalo-dev.artur.engineer
+- **Purpose**: Testing and preview before production
+- **Auto-Deploy**: Coolify deploys on every push to `dev`
+- **Workflow**: ALL changes start here first
 
 ### Workflow Rules
 
 **ALWAYS work on the `dev` branch for new features!**
 
 1. **Development**: Make all changes on `dev` branch
-2. **Test**: Check preview at portfolio-dev.artur.engineer
-3. **Approve**: User reviews and approves
-4. **Release**: Merge `dev` to `main` for production deploy
+2. **Push to dev**: `git push origin dev` → Auto-deploys to goncalo-dev.artur.engineer
+3. **Test Preview**: Check changes at goncalo-dev.artur.engineer
+4. **Request Approval**: Ask user: "Ready zum mergen zu main?"
+5. **Wait for Confirmation**: User tests and confirms the changes
+6. **Merge to main**: Only after user approval → `git merge dev` → `git push origin main`
+7. **Production Deploy**: Auto-deploys to goncalo.artur.engineer
 
-**Never push directly to `main` unless it's a critical hotfix!**
+**IMPORTANT**: 
+- ⚠️ NEVER push directly to `main` without user confirmation
+- ✅ ALWAYS work on `dev` first
+- ✅ ALWAYS ask for user approval before merging to `main`
+- ✅ ALWAYS sync dev with main after merging: `git checkout dev && git merge main && git push origin dev`
 
 ### Commands
 
@@ -39,15 +46,22 @@ This is a **frontend-only** portfolio website for Artur Ferreira built with Next
 # Switch to dev for development
 git checkout dev
 
-# Make changes, commit, push
+# Make changes, commit, push to dev
 git add .
 git commit -m "feat: your changes"
 git push origin dev
+# → Auto-deploys to goncalo-dev.artur.engineer for preview
 
-# When ready for production (user approved)
+# After user confirmation, merge to main
 git checkout main
 git merge dev
 git push origin main
+# → Auto-deploys to goncalo.artur.engineer
+
+# Sync dev back with main after merging
+git checkout dev
+git merge main
+git push origin dev
 ```
 
 ## Tech Stack
