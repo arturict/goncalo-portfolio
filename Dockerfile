@@ -21,8 +21,8 @@ COPY . .
 ENV NODE_ENV=production
 RUN bun run build
 
-# Stage 4: Production runtime (lean image with curl support)
-FROM oven/bun:1
+# Stage 4: Production runtime
+FROM base
 WORKDIR /usr/src/app
 
 # Copy only necessary files from builder
@@ -35,7 +35,8 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# Health check using wget (built into Bun image)
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 --start-period=10s \
-    CMD curl -f http://localhost:3000/ || exit 1
+    CMD bun --eval "import {fetch} from 'bun'; const r = await fetch('http://localhost:3000/'); process.exit(r.ok ? 0 : 1);" || exit 1
 
 CMD ["bun", "run", "start"]
