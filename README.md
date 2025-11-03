@@ -1,41 +1,32 @@
-# Artur Ferreira - Portfolio
+# Gonçalo Torres Novo - Portfolio
 
-> **Frontend-only** portfolio website showcasing skills, experience, and projects. Built with Next.js 16, Tailwind CSS v4, and shadcn/ui.
-
-🌐 **Live:** [arturf.ch](https://arturf.ch)
+> **Frontend-only** portfolio website showcasing skills, experience, and education. Built with Next.js 16, Tailwind CSS v4, and shadcn/ui.
 
 ![Portfolio](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)
 ![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat&logo=tailwindcss)
-![Bun](https://img.shields.io/badge/Bun-1.3-000000?style=flat&logo=bun)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat&logo=typescript)
 
 ## 🚀 Quick Start
 
 ```bash
 # Clone and install
-git clone https://github.com/arturict/portfolio.git
-cd portfolio
-bun install
+git clone https://github.com/arturict/goncalo-portfolio.git
+cd goncalo-portfolio
+npm install
 
 # Development
-bun run dev          # Start dev server at localhost:3000
+npm run dev          # Start dev server at localhost:3000
 
 # Production
-bun run build        # Build for production
-bun run start        # Start production server
+npm run build        # Build for production
+npm run start        # Start production server
 ```
 
 ## 🌐 Deployments
 
 | Environment | URL | Branch | Status |
 |------------|-----|--------|--------|
-| **Production** | [arturf.ch](https://arturf.ch) | `main` | ✅ Live |
-| **Development** | [portfolio-dev.artur.engineer](https://portfolio-dev.artur.engineer) | `dev` | 🧪 Preview |
-
-### Deployment Workflow
-1. **Develop** on `dev` branch → Auto-deploys to preview
-2. **Test** changes on portfolio-dev.artur.engineer
-3. **Merge** `dev` to `main` → Auto-deploys to production
+| **Production** | TBD | `main` | 🚀 Ready |
 
 ## ✨ Features
 
@@ -167,18 +158,18 @@ docker logs -f <container-id>
 
 ## 👤 About
 
-**Artur Ferreira** - Informatiker EFZ Applikationsentwickler (3. Lehrjahr)  
-CKW AG / Axpo Group | Graduating August 2027
+**Gonçalo Torres Novo** - Kaufmann EFZ Lehrling (Commercial Apprentice - 2nd Year)  
+CALIDA AG | Emmen, Luzern, Switzerland | Graduating August 2026
 
-**Tech Stack:**
-- Frontend: Vue.js, React, Next.js, Tailwind CSS
-- Backend: .NET, C#, ASP.NET, PHP, Laravel, Node.js
-- Database: MSSQL, MySQL, MongoDB, PostgreSQL
-- Other: Docker, Git, REST APIs, WebSocket
+**Skills & Competencies:**
+- Business Operations & Retail Management
+- Customer Service & Team Collaboration
+- Office Tools & Digital Communication
+- Languages: German, Portuguese, English
+- Soft Skills: Reliability, Adaptability, Work Ethic, Initiative
 
-**Featured Project:** CodeCellar - Real-time collaborative code editor (2024 Young Talents Hackathon)
-
-📧 [artur@ferreiracruz.com](mailto:artur@ferreiracruz.com) | 🐙 [GitHub](https://github.com/arturict) | 💼 [LinkedIn](https://www.linkedin.com/in/artur-ferreira7)
+**Contact:**
+📧 [goncalo@torres-novo.ch](mailto:goncalo@torres-novo.ch) | 💼 [LinkedIn](https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/) | 🐙 [GitHub](https://github.com/goncalo-torres-novo)
 
 ## 🎨 Customization
 
@@ -227,23 +218,18 @@ portfolio/
 
 ```bash
 # Development
-bun run dev                   # Dev Server mit Hot Reload
+npm run dev                   # Dev Server with Hot Reload
 
 # Production
-bun run build                 # Optimized Build
-bun run start                 # Production Server
+npm run build                 # Optimized Build
+npm run start                 # Production Server
 
 # Code Quality
-bun run lint                  # ESLint Check
+npm run lint                  # ESLint Check
 
 # Docker
 docker build -t portfolio .   # Build Image
 docker run -p 3000:3000 portfolio  # Run Container
-
-# Git Workflow
-git checkout dev              # Switch to dev branch
-git checkout main             # Switch to main branch
-git merge dev                 # Merge dev into main
 ```
 
 ## 📚 Documentation
@@ -315,16 +301,15 @@ Cards with backdrop blur:
 Future backend integration will use:
 - `NEXT_PUBLIC_API_URL=https://portfolio-v2-dev.artur.engineer`
 
-## 📄 Lizenz
+## 📄 License
 
-Gebaut mit 💚 von Artur Ferreira
+Built with 💚 by Gonçalo Torres Novo
 
-## 🤝 Kontakt
+## 🤝 Contact
 
-- **Website**: https://arturf.ch
-- **Email**: artur@ferreiracruz.com
-- **GitHub**: [arturict](https://github.com/arturict)
-- **LinkedIn**: [artur-ferreira7](https://www.linkedin.com/in/artur-ferreira7)
+- **Email**: goncalo@torres-novo.ch
+- **GitHub**: [goncalo-torres-novo](https://github.com/goncalo-torres-novo)
+- **LinkedIn**: [gonçalo-torres-novo-768a25389](https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/)
 
 ---
 

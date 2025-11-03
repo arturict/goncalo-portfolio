@@ -21,7 +21,6 @@ import {
   Rocket
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import posthog from 'posthog-js';
 
 export default function Portfolio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -85,26 +84,26 @@ export default function Portfolio() {
         <div className="relative z-10 max-w-6xl mx-auto text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-4 hover:bg-white/10 transition-all duration-300 group">
             <Sparkles className="w-4 h-4 text-cyan-400 group-hover:rotate-12 transition-transform" />
-            <span className="text-sm font-medium text-gray-300">Graduating August 2027</span>
+            <span className="text-sm font-medium text-gray-300">Graduating August 2026</span>
           </div>
 
           <div className="space-y-6 animate-fade-in">
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-                Artur Ferreira
+                Gonçalo Torres Novo
               </span>
             </h1>
             <div className="flex items-center justify-center gap-2 text-lg sm:text-xl md:text-2xl text-gray-400">
               <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
-              <p className="font-mono text-center">Informatiker EFZ Applikationsentwickler</p>
+              <p className="font-mono text-center">Kaufmann EFZ Lehrling</p>
             </div>
             <p className="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 leading-relaxed px-4">
-              3rd year apprentice at <span className="text-cyan-400 font-semibold">CKW AG / Axpo Group</span>, 
-              working with <span className="text-blue-400 font-semibold">Microsoft technologies</span> to build enterprise solutions
+              2nd year apprentice at <span className="text-cyan-400 font-semibold">CALIDA AG</span>, 
+              based in <span className="text-blue-400 font-semibold">Emmen, Luzern</span>, learning business and commercial skills
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
               <Calendar className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-blue-300">Apprenticeship ends: August 2027</span>
+              <span className="text-sm text-blue-300">Apprenticeship ends: August 2026</span>
             </div>
           </div>
 
@@ -115,10 +114,9 @@ export default function Portfolio() {
               asChild
             >
               <a 
-                href="https://github.com/arturict" 
+                href="https://github.com/goncalo-torres-novo" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => posthog.capture('github_link_clicked', { location: 'hero' })}
               >
                 <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 GitHub
@@ -131,10 +129,9 @@ export default function Portfolio() {
               asChild
             >
               <a 
-                href="https://www.linkedin.com/in/artur-ferreira7" 
+                href="https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => posthog.capture('linkedin_link_clicked', { location: 'hero' })}
               >
                 <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
                 LinkedIn
@@ -147,8 +144,7 @@ export default function Portfolio() {
               asChild
             >
               <a 
-                href="mailto:artur@ferreiracruz.com"
-                onClick={() => posthog.capture('email_link_clicked', { location: 'hero' })}
+                href="mailto:goncalo@torres-novo.ch"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
                 Contact
@@ -173,7 +169,7 @@ export default function Portfolio() {
             </div>
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Experience</h2>
-              <p className="text-gray-500 mt-1 text-sm sm:text-base">Building with Microsoft</p>
+              <p className="text-gray-500 mt-1 text-sm sm:text-base">Retail & Business</p>
             </div>
           </div>
 
@@ -182,14 +178,14 @@ export default function Portfolio() {
               <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                 <div className="space-y-2 w-full">
                   <CardTitle className="text-2xl sm:text-3xl text-white group-hover:text-cyan-400 transition-colors">
-                    CKW AG / Axpo Group
+                    CALIDA AG
                   </CardTitle>
                   <CardDescription className="text-base sm:text-lg text-gray-400">
-                    Informatiker EFZ Applikationsentwickler • 3rd Year
+                    Kaufmann EFZ Lehrling • 2nd Year
                   </CardDescription>
                   <div className="flex items-center gap-2 text-sm text-blue-400">
                     <Calendar className="w-4 h-4" />
-                    <span>Graduating August 2027</span>
+                    <span>Aug 2023 - Aug 2026 • Emmen, LU</span>
                   </div>
                 </div>
                 <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shrink-0">
@@ -199,19 +195,19 @@ export default function Portfolio() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-                Developing enterprise-level applications using <span className="text-blue-400 font-semibold">Microsoft technologies</span>. 
-                Working with .NET, ASP.NET, C#, and MSSQL in the Microsoft ecosystem to deliver 
-                innovative solutions in the energy sector.
+                Training as a commercial apprentice at CALIDA AG. Gaining comprehensive experience in retail operations, 
+                customer service, and business management in a dynamic fashion and retail environment. Developing 
+                professional skills in commerce and business administration.
               </p>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline" className="bg-blue-500/10 text-blue-300 border-blue-500/30">
-                  Microsoft Stack
+                <Badge variant="outline" className="bg-cyan-500/10 text-cyan-300 border-cyan-500/30">
+                  Retail Management
                 </Badge>
-                <Badge variant="outline" className="bg-blue-500/10 text-blue-300 border-blue-500/30">
-                  .NET Ecosystem
+                <Badge variant="outline" className="bg-cyan-500/10 text-cyan-300 border-cyan-500/30">
+                  Customer Service
                 </Badge>
-                <Badge variant="outline" className="bg-blue-500/10 text-blue-300 border-blue-500/30">
-                  Enterprise Solutions
+                <Badge variant="outline" className="bg-cyan-500/10 text-cyan-300 border-cyan-500/30">
+                  Business Operations
                 </Badge>
               </div>
             </CardContent>
@@ -233,10 +229,10 @@ export default function Portfolio() {
           <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-purple-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/20">
             <CardHeader>
               <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-purple-400 transition-colors">
-                Berufsbildungszentrum Wirtschaft, Informatik und Technik Sursee
+                Berufsbildungszentrum Wirtschaft, Informatik und Technik
               </CardTitle>
               <CardDescription className="text-base sm:text-lg text-gray-400">
-                Informatiker EFZ Applikationsentwickler
+                Kaufmann EFZ (Aug 2023 - Aug 2026)
               </CardDescription>
             </CardHeader>
           </Card>
@@ -249,8 +245,8 @@ export default function Portfolio() {
               <Code2 className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Technical Skills</h2>
-              <p className="text-gray-500 mt-1 text-sm sm:text-base">My tech stack</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Core Competencies</h2>
+              <p className="text-gray-500 mt-1 text-sm sm:text-base">Professional skills & knowledge</p>
             </div>
           </div>
 
@@ -259,12 +255,12 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle className="text-xl sm:text-2xl text-cyan-400 flex items-center gap-2">
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Frontend
+                  Business Skills
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {["Vue.js", "JavaScript", "HTML/CSS", "Tailwind CSS", "React", "Next.js"].map((skill) => (
+                  {["Customer Service", "Retail Operations", "Merchandising", "Team Collaboration", "Communication", "Problem Solving"].map((skill) => (
                     <Badge 
                       key={skill} 
                       variant="secondary" 
@@ -281,12 +277,12 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle className="text-xl sm:text-2xl text-green-400 flex items-center gap-2">
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Backend
+                  Languages
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {[".NET", "ASP.NET", "C#", "PHP", "Laravel", "Python", "Node.js"].map((skill) => (
+                  {["German", "Portuguese", "English", "French (Learning)"].map((skill) => (
                     <Badge 
                       key={skill} 
                       variant="secondary" 
@@ -303,12 +299,12 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle className="text-xl sm:text-2xl text-purple-400 flex items-center gap-2">
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Database
+                  Soft Skills
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {["MSSQL", "MySQL", "MongoDB", "PostgreSQL"].map((skill) => (
+                  {["Reliability", "Adaptability", "Work Ethic", "Initiative", "Attention to Detail", "Time Management"].map((skill) => (
                     <Badge 
                       key={skill} 
                       variant="secondary" 
@@ -325,12 +321,12 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle className="text-xl sm:text-2xl text-pink-400 flex items-center gap-2">
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Other
+                  Office Tools
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {["REST APIs", "WebSocket", "Real-time Apps", "Docker", "Git"].map((skill) => (
+                  {["Microsoft Office", "Email Management", "Documentation", "Spreadsheets", "Data Entry", "Digital Communication"].map((skill) => (
                     <Badge 
                       key={skill} 
                       variant="secondary" 
@@ -345,212 +341,48 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Personal Projects Section */}
+        {/* About Section */}
         <section className="space-y-8 sm:space-y-12 scroll-fade-in">
           <div className="flex items-center gap-4 mb-8 sm:mb-12">
             <div className="p-2 sm:p-3 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl border border-orange-500/30">
               <Server className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400" />
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Personal Projects</h2>
-              <p className="text-gray-500 mt-1 text-sm sm:text-base">Self-hosted & Learning</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">About Me</h2>
+              <p className="text-gray-500 mt-1 text-sm sm:text-base">Background & Interests</p>
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
-            {/* Homelab Card */}
-            <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-orange-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-orange-500/20">
-              <CardHeader>
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="p-2 bg-orange-500/10 rounded-lg">
-                    <Server className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-orange-400 transition-colors">
-                      Homelab & Self-Hosting
-                    </CardTitle>
-                  </div>
-                </div>
-                <CardDescription className="text-base text-gray-400">
-                  Production-grade Proxmox setup for learning & experimentation
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Always-On Nodes</span>
-                    <span className="text-white font-semibold">2 Nodes 24/7</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Resources</span>
-                    <span className="text-orange-400 font-semibold">8 cores/16 threads, 40GB RAM</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Storage</span>
-                    <span className="text-gray-300 font-semibold">7TB (5TB HDD + 2TB SSD)</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Cloud Equivalent</span>
-                    <span className="text-green-400 font-semibold">~CHF 600/month</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">Power Consumption</span>
-                    <span className="text-green-400 font-semibold">~22 kWh/month (CHF 5.50)</span>
-                  </div>
-                </div>
-                <div className="pt-3 border-t border-gray-700">
-                  <p className="text-sm text-gray-300 leading-relaxed">
-                    Production-ready lab for deploying projects with <span className="text-orange-400 font-semibold">Docker</span> & 
-                    <span className="text-orange-400 font-semibold"> PaaS</span>, experimenting with PostgreSQL, MySQL, DevOps practices. 
-                    Aiming at <span className="text-green-400 font-semibold">99% uptime</span>. Highly energy-efficient setup.
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
-                    Proxmox
-                  </Badge>
-                  <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30 text-xs">
-                    7TB Storage
-                  </Badge>
-                  <Badge variant="outline" className="bg-green-500/10 text-green-300 border-green-500/30 text-xs">
-                    99% Uptime Goal
-                  </Badge>
-                  <Badge variant="outline" className="bg-green-500/10 text-green-300 border-green-500/30 text-xs">
-                    Saves ~CHF 7k/year
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* AI Enthusiast Card */}
-            <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-purple-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-purple-500/20">
-              <CardHeader>
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="p-2 bg-purple-500/10 rounded-lg">
-                    <Brain className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-purple-400 transition-colors">
-                      AI Enthusiast
-                    </CardTitle>
-                  </div>
-                </div>
-                <CardDescription className="text-base text-gray-400">
-                  Exploring artificial intelligence and machine learning
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Passionate about AI/ML technologies and their applications. 
-                  Experimenting with various AI models and tools to understand the 
-                  future of technology and automation.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="bg-purple-500/10 text-purple-300 border-purple-500/30 text-xs">
-                    Machine Learning
-                  </Badge>
-                  <Badge variant="outline" className="bg-purple-500/10 text-purple-300 border-purple-500/30 text-xs">
-                    AI Models
-                  </Badge>
-                  <Badge variant="outline" className="bg-purple-500/10 text-purple-300 border-purple-500/30 text-xs">
-                    Automation
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Blog Coming Soon Card */}
-            <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-cyan-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-cyan-500/20 sm:col-span-2">
-              <CardHeader>
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="p-2 bg-cyan-500/10 rounded-lg">
-                    <BookOpen className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-cyan-400 transition-colors">
-                        Tech Blog
-                      </CardTitle>
-                      <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 text-xs">
-                        Coming Soon
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-                <CardDescription className="text-base text-gray-400">
-                  Sharing knowledge and experiences
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                  Building a simple blog platform to share insights about development, technology, and my learning journey. 
-                  Articles will cover topics like web development, DevOps, self-hosting, and more.
-                </p>
-                <div className="flex items-center gap-3 text-sm text-cyan-400">
-                  <Rocket className="w-4 h-4" />
-                  <span>Blog platform in development - Stay tuned!</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Featured Project */}
-        <section className="space-y-8 sm:space-y-12 scroll-fade-in">
-          <div className="flex items-center gap-4 mb-8 sm:mb-12">
-            <div className="p-2 sm:p-3 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl border border-yellow-500/30">
-              <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" />
-            </div>
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Featured Project</h2>
-              <p className="text-gray-500 mt-1 text-sm sm:text-base">Hackathon project</p>
-            </div>
-          </div>
-
-          <Card className="group relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700 hover:border-yellow-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-yellow-500/30">
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <CardHeader className="relative z-10 space-y-4">
-              <div className="flex flex-col items-start gap-3">
-                <div className="space-y-3 w-full">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <CardTitle className="text-2xl sm:text-3xl md:text-4xl text-white group-hover:text-yellow-400 transition-colors">
-                      CodeCellar
-                    </CardTitle>
-                    <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 shadow-lg text-xs sm:text-sm">
-                      Hackathon 2024
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-base sm:text-xl text-gray-400">
-                    Real-time Collaborative Code Editor
-                  </CardDescription>
-                </div>
-              </div>
+          <Card className="group bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-800 hover:border-orange-500/50 transition-all duration-500 backdrop-blur-sm hover:shadow-2xl hover:shadow-orange-500/20">
+            <CardHeader>
+              <CardTitle className="text-xl sm:text-2xl text-white group-hover:text-orange-400 transition-colors">
+                Commercial Apprentice at CALIDA AG
+              </CardTitle>
             </CardHeader>
-            <CardContent className="relative z-10 space-y-6">
+            <CardContent className="space-y-4">
               <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-                Built during the{" "}
-                <a
-                  href="https://young-talents-hackathon.ch/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-yellow-400 hover:text-yellow-300 underline decoration-yellow-400/30 hover:decoration-yellow-400 transition-all"
-                  onClick={() => posthog.capture('hackathon_link_clicked')}
-                >
-                  2024 Young Talents Hackathon
-                </a>
-                . A collaborative code editor with real-time synchronization powered by WebSocket. 
-                Based on Monaco Editor (VS Code's engine), enabling seamless multi-user coding.
+                I am a commercial apprentice (Kaufmann EFZ Lehrling) in my second year of training at CALIDA AG, 
+                a leading fashion and retail company based in Emmen, Luzern, Switzerland. I am gaining practical 
+                experience in retail operations, customer service, business management, and team collaboration.
               </p>
-              <div className="flex flex-wrap gap-2 sm:gap-3">
-                {["Monaco Editor", "WebSocket", "Real-time Sync", "Collaborative"].map((tech) => (
-                  <Badge 
-                    key={tech} 
-                    variant="outline" 
-                    className="px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base bg-yellow-500/10 text-yellow-300 border-yellow-500/30 hover:bg-yellow-500/20 hover:border-yellow-500/50 transition-all"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
+              <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+                My apprenticeship is designed to provide comprehensive training in commercial and business operations, 
+                with an expected completion date of August 2026. I am committed to developing professional skills and 
+                contributing effectively to the organization.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-4">
+                <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30">
+                  CALIDA AG
+                </Badge>
+                <Badge variant="outline" className="bg-orange-500/10 text-orange-300 border-orange-500/30">
+                  Emmen, LU
+                </Badge>
+                <Badge variant="outline" className="bg-green-500/10 text-green-300 border-green-500/30">
+                  Graduating Aug 2026
+                </Badge>
+                <Badge variant="outline" className="bg-blue-500/10 text-blue-300 border-blue-500/30">
+                  38 LinkedIn Contacts
+                </Badge>
               </div>
             </CardContent>
           </Card>
@@ -565,9 +397,9 @@ export default function Portfolio() {
                 <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
               <div className="space-y-4">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold px-4">Let&apos;s Build Something Amazing</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold px-4">Get In Touch</h2>
                 <p className="max-w-2xl mx-auto text-base sm:text-xl text-gray-300 px-4">
-                  Open to discussing new projects, creative ideas, or opportunities to bring your vision to life
+                  Interested in connecting? Feel free to reach out on LinkedIn or send me an email.
                 </p>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-6">
@@ -577,11 +409,10 @@ export default function Portfolio() {
                   asChild
                 >
                   <a 
-                    href="mailto:artur@ferreiracruz.com"
-                    onClick={() => posthog.capture('email_link_clicked', { location: 'cta' })}
+                    href="mailto:goncalo@torres-novo.ch"
                   >
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
-                    Get in Touch
+                    Send Email
                   </a>
                 </Button>
                 <Button
@@ -591,13 +422,12 @@ export default function Portfolio() {
                   asChild
                 >
                   <a 
-                    href="https://github.com/arturict" 
+                    href="https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    onClick={() => posthog.capture('github_link_clicked', { location: 'cta' })}
                   >
-                    <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                    View GitHub
+                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
+                    LinkedIn Profile
                   </a>
                 </Button>
               </div>
@@ -611,31 +441,28 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-gray-500 text-center md:text-left text-sm sm:text-base">
-              © {new Date().getFullYear()} Artur Ferreira. Crafted with Next.js, Tailwind CSS & shadcn/ui
+              © {new Date().getFullYear()} Gonçalo Torres Novo. Crafted with Next.js, Tailwind CSS & shadcn/ui
             </p>
             <div className="flex items-center gap-6">
               <a 
-                href="https://github.com/arturict" 
+                href="https://github.com/goncalo-torres-novo" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-cyan-400 transition-colors"
-                onClick={() => posthog.capture('github_link_clicked', { location: 'footer' })}
               >
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="https://www.linkedin.com/in/artur-ferreira7" 
+                href="https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-cyan-400 transition-colors"
-                onClick={() => posthog.capture('linkedin_link_clicked', { location: 'footer' })}
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="mailto:artur@ferreiracruz.com"
+                href="mailto:goncalo@torres-novo.ch"
                 className="text-gray-500 hover:text-cyan-400 transition-colors"
-                onClick={() => posthog.capture('email_link_clicked', { location: 'footer' })}
               >
                 <Mail className="w-5 h-5" />
               </a>

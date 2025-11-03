@@ -3,42 +3,38 @@ import "./globals.css";
 import { PHProvider } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Artur Ferreira - Full-Stack Developer",
+  title: "Gonçalo Torres Novo - Commercial Apprentice",
   description:
-    "Portfolio of Artur Ferreira, 3rd year apprentice at CKW AG / Axpo Group. Full-stack developer working with Microsoft technologies, specializing in .NET, C#, Vue.js, and real-time applications. Graduating August 2027.",
+    "Portfolio of Gonçalo Torres Novo, 2nd year commercial apprentice at CALIDA AG in Emmen, Luzern, Switzerland. Specializing in retail operations, customer service, and business management. Graduating August 2026.",
   keywords: [
-    "Artur Ferreira",
+    "Gonçalo Torres Novo",
     "Portfolio",
-    "Full Stack Developer",
-    "Informatiker",
-    "Applikationsentwickler",
-    "CKW AG",
-    "Axpo Group",
-    "Microsoft",
-    ".NET",
-    "C#",
-    "ASP.NET",
-    "Vue.js",
-    "MSSQL",
-    "WebSocket",
-    "Real-time Applications"
+    "Commercial Apprentice",
+    "Kaufmann EFZ",
+    "CALIDA AG",
+    "Retail",
+    "Customer Service",
+    "Business Operations",
+    "Emmen",
+    "Luzern",
+    "Switzerland"
   ],
-  authors: [{ name: "Artur Ferreira", url: "https://arturf.ch" }],
-  creator: "Artur Ferreira",
+  authors: [{ name: "Gonçalo Torres Novo" }],
+  creator: "Gonçalo Torres Novo",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://arturf.ch",
-    title: "Artur Ferreira - Full-Stack Developer",
-    description: "Full-stack developer portfolio showcasing Microsoft technologies and modern web applications",
-    siteName: "Artur Ferreira Portfolio",
+    url: "https://goncalo-torres-novo.ch",
+    title: "Gonçalo Torres Novo - Commercial Apprentice",
+    description: "Commercial apprentice portfolio showcasing retail operations, customer service, and business skills",
+    siteName: "Gonçalo Torres Novo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Artur Ferreira - Full-Stack Developer",
-    description: "Full-stack developer working with Microsoft technologies",
+    title: "Gonçalo Torres Novo - Commercial Apprentice",
+    description: "Commercial apprentice working in retail and business operations",
   },
-  metadataBase: new URL("https://arturf.ch"),
+  metadataBase: new URL("https://goncalo-torres-novo.ch"),
 };
 
 export default function RootLayout({
