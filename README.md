@@ -1,6 +1,6 @@
-# Gonçalo Torres Novo - Portfolio
+# Gonçalo Torres Novo - Commercial Apprentice Portfolio
 
-> **Frontend-only** portfolio website showcasing skills, experience, and education. Built with Next.js 16, Tailwind CSS v4, and shadcn/ui.
+> **Modern portfolio website** for a commercial apprentice showcasing professional profile, experience, and skills. Built with Next.js 16, Tailwind CSS v4, and shadcn/ui.
 
 ![Portfolio](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)
 ![Tailwind](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat&logo=tailwindcss)
@@ -31,14 +31,13 @@ bun start        # Start production server
 
 ## ✨ Features
 
-- **🌙 Dark Mode**: Komplett in Dark Mode designed
-- **🖱️ Mouse-Reactive Background**: Gradient folgt dem Cursor
-- **🎨 Smooth Animations**: Scroll-based fade-ins, blob animations, gradient effects
-- **⚡ Performance**: Server-side Rendering mit Next.js
-- **📱 Fully Responsive**: Mobile-first Design
-- **🎯 Modern UI**: shadcn/ui Komponenten mit Tailwind CSS v4
-- **🚀 TypeScript**: Type-safe development
-- **📦 Bun**: Schneller Package Manager
+- **🎯 Professional Focus**: Tailored for commercial/business professionals
+- **🌙 Dark Mode**: Modern dark theme with professional gradient accents
+- **🖱️ Interactive Background**: Subtle mouse-reactive gradient
+- **🎨 Smooth Animations**: Scroll-based fade-ins, subtle transitions
+- **⚡ Performance**: Server-side rendering with Next.js
+- **📱 Fully Responsive**: Mobile-first, professional design
+- **🎭 Modern UI**: shadcn/ui components with business aesthetic
 
 ## 🎭 Design Features
 
@@ -159,18 +158,20 @@ docker logs -f <container-id>
 
 ## 👤 About
 
-**Gonçalo Torres Novo** - Kaufmann EFZ Lehrling (Commercial Apprentice - 2nd Year)  
-CALIDA AG | Emmen, Luzern, Switzerland | Graduating August 2026
+**Gonçalo Torres Novo** - Kaufmann EFZ Lehrling (Commercial Apprentice - 3rd Year)  
+CALIDA AG Sursee | Based in Emmen, Luzern, Switzerland | Graduating August 2026
 
-**Skills & Competencies:**
-- Business Operations & Retail Management
-- Customer Service & Team Collaboration
-- Office Tools & Digital Communication
+**Professional Focus:**
+- Retail Operations & Management
+- Customer Service Excellence
+- Business Administration
+- Team Collaboration & Communication
 - Languages: German, Portuguese, English
-- Soft Skills: Reliability, Adaptability, Work Ethic, Initiative
 
 **Contact:**
-📧 [goncalo@torres-novo.ch](mailto:goncalo@torres-novo.ch) | 💼 [LinkedIn](https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/) | 🐙 [GitHub](https://github.com/goncalo-torres-novo)
+📧 [goncalo@torres-novo.ch](mailto:goncalo@torres-novo.ch) | 💼 [LinkedIn](https://www.linkedin.com/in/gonçalo-torres-novo-768a25389/)
+
+**Portfolio Design & Development**: [Artur Ferreira - arturf.ch](https://arturf.ch)
 
 ## 🎨 Customization
 
