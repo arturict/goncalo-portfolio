@@ -12,3 +12,14 @@ yarn-error.log*
 .DS_Store
 *.pem
 README.md
+.editorconfig
+.eslintignore
+.eslintrc.mjs
+.prettierignore
+.prettierrc
+BACKEND.md
+COOLIFY_DEPLOYMENT.md
+DOCS.md
+backend
+frontend
+.github/workflows
