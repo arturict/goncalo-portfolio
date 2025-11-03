@@ -1,54 +1,33 @@
-# Multi-runtime Dockerfile - Tries Bun, falls back to Node if needed
-FROM node:20-alpine AS base
-RUN apk add --no-cache curl libc6-compat
+# Multi-stage Docker build for Gonçalo's portfolio using Bun
+FROM oven/bun:1 AS base
+WORKDIR /usr/src/app
 
-# Dependencies stage
-FROM base AS deps
-WORKDIR /app
-COPY package.json bun.lock* package-lock.json* ./
-RUN \
-  if [ -f bun.lock ]; then \
-    npm install -g bun && bun install --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then \
-    npm ci; \
-  else \
-    echo "No lockfile found" && exit 1; \
-  fi
+# Stage 2: Install dev dependencies
+FROM base AS install
+RUN mkdir -p /temp/dev
+COPY package.json bun.lock* /temp/dev/
+RUN cd /temp/dev && bun install --frozen-lockfile
 
-# Builder stage
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Stage 3: Install production dependencies only
+RUN mkdir -p /temp/prod
+COPY package.json bun.lock* /temp/prod/
+RUN cd /temp/prod && bun install --frozen-lockfile --production
+
+# Stage 4: Build stage
+FROM base AS prerelease
+COPY --from=install /temp/dev/node_modules node_modules
 COPY . .
-ENV NEXT_TELEMETRY_DISABLED=1
-RUN \
-  if [ -f bun.lock ]; then \
-    npm install -g bun && bun run build; \
-  else \
-    npm run build; \
-  fi
-
-# Runner stage
-FROM base AS runner
-WORKDIR /app
 
 ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
+RUN bun run build
 
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-RUN mkdir .next && chown nextjs:nodejs .next
-
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
+# Stage 5: Production stage
+FROM base AS release
+COPY --from=install /temp/prod/node_modules node_modules
+COPY --from=prerelease /usr/src/app/public ./public
+COPY --from=prerelease /usr/src/app/.next ./.next
+COPY --from=prerelease /usr/src/app/package.json .
 
 EXPOSE 3000
-
-# Use Node.js (most reliable for Next.js standalone)
-CMD ["node", "server.js"]
+ENV NODE_ENV=production
+CMD ["bun", "run", "start"]

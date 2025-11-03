@@ -12,21 +12,22 @@
 # Clone and install
 git clone https://github.com/arturict/goncalo-portfolio.git
 cd goncalo-portfolio
-npm install
+bun install
 
 # Development
-npm run dev          # Start dev server at localhost:3000
+bun dev          # Start dev server at localhost:3000
 
 # Production
-npm run build        # Build for production
-npm run start        # Start production server
+bun run build    # Build for production
+bun start        # Start production server
 ```
 
 ## 🌐 Deployments
 
 | Environment | URL | Branch | Status |
 |------------|-----|--------|--------|
-| **Production** | TBD | `main` | 🚀 Ready |
+| **Production** | goncalo.artur.engineer | `main` | 🚀 Ready |
+| **Development** | goncalo-dev.artur.engineer | `dev` | 🧪 Dev |
 
 ## ✨ Features
 
@@ -60,12 +61,12 @@ npm run start        # Start production server
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
+- **Runtime**: Bun (blazingly fast JavaScript runtime)
 - **Styling**: Tailwind CSS v4
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
-- **Runtime**: Bun (dev) / Node.js (production)
 - **TypeScript**: For type safety
-- **Docker**: Multi-stage build with Node.js
+- **Docker**: Multi-stage build with Bun runtime
 
 ## 📦 Installation
 
@@ -218,18 +219,18 @@ portfolio/
 
 ```bash
 # Development
-npm run dev                   # Dev Server with Hot Reload
+bun dev                   # Dev Server with Hot Reload
 
 # Production
-npm run build                 # Optimized Build
-npm run start                 # Production Server
+bun run build             # Optimized Build
+bun start                 # Production Server
 
 # Code Quality
-npm run lint                  # ESLint Check
+bun run lint              # ESLint Check
 
 # Docker
-docker build -t portfolio .   # Build Image
-docker run -p 3000:3000 portfolio  # Run Container
+docker build -t goncalo-portfolio .     # Build Image
+docker run -p 3000:3000 goncalo-portfolio  # Run Container
 ```
 
 ## 📚 Documentation
@@ -303,7 +304,8 @@ Future backend integration will use:
 
 ## 📄 License
 
-Built with 💚 by Gonçalo Torres Novo
+Built with 💚 by Gonçalo Torres Novo  
+**Portfolio Design & Development** by [Artur Ferreira](https://artur.engineer)
 
 ## 🤝 Contact
 
@@ -313,4 +315,4 @@ Built with 💚 by Gonçalo Torres Novo
 
 ---
 
-Made with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and [shadcn/ui](https://ui.shadcn.com)
+**Design Credit**: [Artur Ferreira - artur.engineer](https://artur.engineer) | Made with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), [shadcn/ui](https://ui.shadcn.com), and [Bun](https://bun.sh)
